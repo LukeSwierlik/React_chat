@@ -18,7 +18,7 @@ const ViewMessages = (props) => {
                          key={index}
                     >
                         <div className={'text'}>
-                            <div><b>{messageUser.username || 'Ghost'}</b></div>
+                            <div><b>{messageUser.username}</b> - <span className={'date_message'}>{message.messageDate}</span></div>
                             {message.message}
                         </div>
                     </div>

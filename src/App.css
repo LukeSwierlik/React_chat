@@ -95,3 +95,14 @@ li.list-group-item {
     /*display: table;*/
     /*content: '';*/
 /*}*/
+
+.form-input-send-message{
+    display: flex;
+    justify-content: space-between;
+}
+.date_message{
+    font-size: 11px;
+}
+.col-3.button-send button{
+    width: 100%;
+}

@@ -1,5 +1,5 @@
 import { takeEvery, call, put, all, fork } from 'redux-saga/effects';
-import { register as actions } from 'reduxUtility/actionsType/actionsType';
+import {register as actions, users as actionUsers} from 'reduxUtility/actionsType/actionsType';
 import axiosInstance from 'axiosInstance';
 
 const sendRegister = (user) => {
@@ -11,7 +11,9 @@ function* workerRegister(action) {
 
     try {
         yield call(sendRegister, user);
+
         yield put({type: actions.SUCCESS_REGISTER_USER, isSuccess: true});
+        yield put({type: actionUsers.FETCH_USERS_SAGA});
     } catch (error) {
         yield put({type: actions.ERROR_REGISTER_USER, isError: true});
     }

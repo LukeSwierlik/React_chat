@@ -28,10 +28,11 @@ export function* workerCreateChannel(action) {
 
     try {
         yield call(postCreateChannel, channel);
-        yield put({type: actions.CREATE_CHANNEL})
 
+        yield put({type: actions.SUCCESS_CREATE_CHANNEL, isCreateChannelSuccess: true});
+        yield put({type: actions.FETCH_CHANNELS_SAGA});
     } catch (error) {
-        yield put({type: actions.ERROR_CREATE_CHANNEL, error})
+        yield put({type: actions.ERROR_CREATE_CHANNEL, isCreateChannelError: true})
     }
 }
 

@@ -14,7 +14,6 @@ export function* workerUsers() {
         const usersList = yield convertDataResponseFirebaseToList(data);
 
         yield put({ type: actions.FETCH_USERS, usersList });
-
     } catch (error) {
         yield put({ type: actions.ERROR_FETCH_USERS, error });
     }
