@@ -5,6 +5,7 @@ import ViewMessages from 'view/ViewMessages';
 import ViewInputMessage from 'view/ViewInputMessage';
 import {currentTime} from 'utility/utility';
 import { messages as action } from 'reduxUtility/actionsType/actionsType';
+import ViewAlert from "../view/ViewAlert";
 
 class Messages extends Component {
     constructor(props) {
@@ -71,8 +72,8 @@ class Messages extends Component {
         const { text } = this.state;
 
         return (
-            <div>
-                <div className={'col sm-6'}>
+            <div className={'row'}>
+                <div className={'col sm-12'}>
                     <div className={'messages_box'} ref={this.messageBox}>
                         {!messages.loading && <ViewMessages
                             messages={messages.messagesList}
@@ -80,14 +81,17 @@ class Messages extends Component {
                             users={users}
                         />}
                     </div>
+
+                    <hr />
+
+                    {user.isLogged ? (<ViewInputMessage
+                        onChange={this.handlerChange}
+                        onSubmit={this.onSubmitMessage}
+                        textMessage={text}
+                    />) : (
+                        <ViewAlert type={'danger'} message={'You must be logged in to be able to write.'}/>
+                    )}
                 </div>
-
-                {user.isLogged && <ViewInputMessage
-                    onChange={this.handlerChange}
-                    onSubmit={this.onSubmitMessage}
-                    textMessage={text}
-                />}
-
             </div>
         );
     }

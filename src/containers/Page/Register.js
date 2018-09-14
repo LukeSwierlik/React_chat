@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-import ViewRegister from "../../view/ViewRegister";
+import ViewRegister from 'view/ViewRegister';
 import { register as action } from 'reduxUtility/actionsType/actionsType';
 import { currentTime } from 'utility/utility';
 import ViewAlert from 'view/ViewAlert';
@@ -56,7 +56,7 @@ class Register extends Component {
                 username: '',
                 password: ''
             }
-        })
+        });
     };
 
     render() {

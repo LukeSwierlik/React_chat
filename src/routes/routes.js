@@ -1,11 +1,10 @@
 import Home from 'containers/Page/Home';
 import CreateChannelsContainer from 'containers/CreateChannelsContainer/CreateChannelsContainer';
 import ChannelContainer from 'components/Channels/Channel';
-// import CreateUserContainer from 'containers/CreateUserContainer/CreateUserContainer';
 import ChannelsListContainer from 'containers/Page/ChannelList';
 import RegisterContainer from 'containers/Page/Register';
-import LoginContainer from "../containers/Page/Login";
-import SettingsContainer from "../containers/Page/Settings";
+import LoginContainer from 'containers/Page/Login';
+import SettingsContainer from 'containers/Page/Settings';
 
 const routes = [
     {
