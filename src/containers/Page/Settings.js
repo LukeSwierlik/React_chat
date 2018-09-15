@@ -1,9 +1,23 @@
-import React, {Component} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import ViewSettings from 'view/ViewSettings';
 import { settings as action } from 'reduxUtility/actionsType/actionsType';
 
-class Settings extends Component {
+class Settings extends React.Component {
+    static propTypes = {
+        users: PropTypes.array.isRequired,
+        userId: PropTypes.string.isRequired,
+        userUId: PropTypes.string.isRequired,
+        actions: PropTypes.object.isRequired
+    };
+
+    static defaultProps = {
+        users: [],
+        userId: '',
+        userUId: '',
+    };
+
     state = {
         user: {},
         newUsername: '',

@@ -1,10 +1,21 @@
-import React, {Component} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { Link } from "react-router-dom";
 import ViewChannelsList from 'view/ViewChannelsList';
-import {Link} from "react-router-dom";
-import ViewAlert from "../../view/ViewAlert";
+import ViewAlert from 'view/ViewAlert';
 
-class ChannelList extends Component {
+class ChannelList extends React.Component {
+    static propTypes = {
+        channelsList: PropTypes.array.isRequired,
+        isLogged: PropTypes.bool.isRequired
+    };
+
+    static defaultProps = {
+        channelsList: [],
+        isLogged: false
+    };
+
     shouldComponentUpdate(prevProps, prevState) {
         return (prevProps.channelsList.length !== this.props.channelsList.length);
     }

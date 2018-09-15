@@ -1,11 +1,21 @@
-import React, {Component} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import ViewHeader from "../../view/ViewHeader";
 import { auth as action } from 'reduxUtility/actionsType/actionsType';
 
-class Header extends Component {
+class Header extends React.Component {
+    static propTypes = {
+        user: PropTypes.object.isRequired,
+        actions: PropTypes.object.isRequired
+    };
+
+    static defaultProps = {
+        user: {}
+    };
+
     onLogout = () => {
         const { actions: { logout }, history } = this.props;
 

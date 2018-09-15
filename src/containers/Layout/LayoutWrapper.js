@@ -1,16 +1,17 @@
 import React from 'react';
-import HeaderContainer from "./Header";
-import Content from "./Content";
-import Footer from "./Footer";
+import Header from 'containers/Layout/Header';
+import Content from 'containers/Layout/Content';
+import Footer from 'containers/Layout/Footer';
 
 const LayoutWrapper = ({children}) => {
     return (
         <React.Fragment>
-            <HeaderContainer/>
+            <Header/>
+
             <Content children={children}/>
+
             <Footer/>
         </React.Fragment>
-
     );
 };
 

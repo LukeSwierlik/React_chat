@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import logoApp from 'assets/images/logoApp.svg';
 
 const ViewLogin = (props) => {
@@ -38,6 +39,11 @@ const ViewLogin = (props) => {
             <p className="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
         </form>
     );
+};
+
+ViewLogin.propTypes = {
+    onSubmit: PropTypes.func.isRequired,
+    onChange: PropTypes.func.isRequired
 };
 
 export default ViewLogin;

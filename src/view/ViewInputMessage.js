@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const ViewInputMessage = (props) => {
     const { onSubmit, onChange, textMessage } = props;
@@ -23,6 +24,16 @@ const ViewInputMessage = (props) => {
             </div>
         </form>
     );
+};
+
+ViewInputMessage.propTypes = {
+    onSubmit: PropTypes.func.isRequired,
+    onChange: PropTypes.func.isRequired,
+    textMessage: PropTypes.string.isRequired
+};
+
+ViewInputMessage.defaultProps = {
+    textMessage: ''
 };
 
 export default ViewInputMessage;

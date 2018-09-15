@@ -1,11 +1,23 @@
-import React, {Component} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import ViewRegister from 'view/ViewRegister';
+import ViewAlert from 'view/ViewAlert';
 import { register as action } from 'reduxUtility/actionsType/actionsType';
 import { currentTime } from 'utility/utility';
-import ViewAlert from 'view/ViewAlert';
 
-class Register extends Component {
+class Register extends React.Component {
+    static propTypes = {
+        successRegister: PropTypes.bool.isRequired,
+        errorRegister: PropTypes.bool.isRequired,
+        actions: PropTypes.object.isRequired
+    };
+
+    static defaultProps = {
+        successRegister: false,
+        errorRegister: false
+    };
+
     state = {
         data_account: {
             firstName: '',

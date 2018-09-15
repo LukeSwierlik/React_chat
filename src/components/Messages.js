@@ -1,13 +1,27 @@
-import React, {Component} from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import ViewMessages from 'view/ViewMessages';
 import ViewInputMessage from 'view/ViewInputMessage';
-import {currentTime} from 'utility/utility';
+import ViewAlert from 'view/ViewAlert';
+import { currentTime } from 'utility/utility';
 import { messages as action } from 'reduxUtility/actionsType/actionsType';
-import ViewAlert from "../view/ViewAlert";
 
-class Messages extends Component {
+class Messages extends React.Component {
+    static propTypes = {
+        user: PropTypes.object.isRequired,
+        messages: PropTypes.object.isRequired,
+        users: PropTypes.array.isRequired,
+        actions: PropTypes.object.isRequired
+    };
+
+    static defaultProps = {
+        user: {},
+        messages: {},
+        users: [],
+    };
+
     constructor(props) {
         super(props);
 

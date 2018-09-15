@@ -1,8 +1,19 @@
-import React, {Component} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import MessagesContainer from "../Messages";
 
-class Channel extends Component {
+class Channel extends React.Component {
+    static propTypes = {
+        channelsList: PropTypes.array.isRequired,
+        loading: PropTypes.bool.isRequired,
+    };
+
+    static defaultProps = {
+        channelsList: [],
+        loading: false
+    };
+
     constructor(props) {
         super(props);
 

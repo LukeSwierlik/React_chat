@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import logoApp from 'assets/images/logoApp.svg';
 
 const ViewRegister = (props) => {
@@ -127,6 +128,22 @@ const ViewRegister = (props) => {
             </div>
         </div>
     );
+};
+
+ViewRegister.propTypes = {
+    onChange: PropTypes.func.isRequired,
+    onSubmit: PropTypes.func.isRequired,
+    data_account: PropTypes.object.isRequired
+};
+
+ViewRegister.defaultProps = {
+    data_account: {
+        firstName: '',
+        lastName: '',
+        email: '',
+        username: '',
+        password: ''
+    }
 };
 
 export default ViewRegister;
