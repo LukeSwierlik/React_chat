@@ -1,11 +1,21 @@
-import React, {Component} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { withRouter } from 'react-router-dom';
 import ViewLogin from "../../view/ViewLogin";
 import { auth as actionAuth } from 'reduxUtility/actionsType/actionsType';
 
-class Login extends Component {
+class Login extends React.Component {
+    static propTypes = {
+        users: PropTypes.array.isRequired,
+        actions: PropTypes.object.isRequired
+    };
+
+    static defaultProps = {
+        users: []
+    };
+
     state = {
         email: '',
         password: ''

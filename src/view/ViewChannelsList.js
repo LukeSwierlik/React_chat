@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 const ViewChannelsList = (props) => {
@@ -18,6 +19,14 @@ const ViewChannelsList = (props) => {
             ))}
         </ul>
     );
+};
+
+ViewChannelsList.propTypes = {
+    channelsList: PropTypes.array.isRequired
+};
+
+ViewChannelsList.defaultProps = {
+    channelsList: []
 };
 
 export default ViewChannelsList;

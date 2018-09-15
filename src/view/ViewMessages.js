@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 const ViewMessages = (props) => {
@@ -26,6 +27,18 @@ const ViewMessages = (props) => {
             })}
         </React.Fragment>
     );
+};
+
+ViewMessages.propTypes = {
+    messages: PropTypes.array.isRequired,
+    currentUser: PropTypes.object.isRequired,
+    users: PropTypes.array.isRequired
+};
+
+ViewMessages.defaultProps = {
+    messages: [],
+    currentUser: {},
+    users: []
 };
 
 export default ViewMessages;

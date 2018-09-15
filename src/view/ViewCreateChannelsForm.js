@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const ViewCreateChannelsForm = (props) => {
     const { onChange, onSubmit, value } = props;
@@ -21,6 +22,16 @@ const ViewCreateChannelsForm = (props) => {
             <button type="submit" className="btn btn-primary">Create</button>
         </form>
     );
+};
+
+ViewCreateChannelsForm.propTypes = {
+    onChange: PropTypes.func.isRequired,
+    onSubmit: PropTypes.func.isRequired,
+    value: PropTypes.string.isRequired
+};
+
+ViewCreateChannelsForm.defaultProps = {
+    value: ''
 };
 
 export default ViewCreateChannelsForm;

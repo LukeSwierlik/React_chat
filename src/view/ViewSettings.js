@@ -1,8 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const ViewSettings = (props) => {
-    const {user, onChange, onSubmit, newUsername} = props;
-    const {id, firstName, lastName, username, date_create_account} = user;
+    const { user, onChange, onSubmit, newUsername } = props;
+    const { id, firstName, lastName, username, date_create_account } = user;
 
     return (
         <React.Fragment>
@@ -45,6 +46,24 @@ const ViewSettings = (props) => {
             </div>
         </React.Fragment>
     );
+};
+
+ViewSettings.propTypes = {
+    user: PropTypes.object.isRequired,
+    onChange: PropTypes.func.isRequired,
+    onSubmit: PropTypes.func.isRequired,
+    newUsername: PropTypes.string.isRequired
+};
+
+ViewSettings.defaultProps = {
+    user: {
+        id: 0,
+        firstName: '',
+        lastName: '',
+        username: '',
+        date_create_account: ''
+    },
+    newUsername: ''
 };
 
 export default ViewSettings;

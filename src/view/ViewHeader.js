@@ -1,5 +1,6 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import logoApp from 'assets/images/logoApp.svg';
 
 const ViewHeader = (props) => {
@@ -32,6 +33,15 @@ const ViewHeader = (props) => {
             )}
         </div>
     );
+};
+
+ViewHeader.propTypes = {
+    user: PropTypes.object.isRequired,
+    onLogout: PropTypes.func.isRequired
+};
+
+ViewHeader.defaultProps = {
+    user: {}
 };
 
 export default ViewHeader;

@@ -1,10 +1,22 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import ViewCreateChannelsForm from 'view/ViewCreateChannelsForm';
-import {channels as action} from 'reduxUtility/actionsType/actionsType';
 import ViewAlert from 'view/ViewAlert';
+import { channels as action } from 'reduxUtility/actionsType/actionsType';
 
 class CreateChannelsContainer extends Component {
+    static propTypes = {
+        isCreateChannelSuccess: PropTypes.bool.isRequired,
+        isCreateChannelError: PropTypes.bool.isRequired,
+        actions: PropTypes.object.isRequired,
+    };
+
+    static defaultProps = {
+        isCreateChannelSuccess: false,
+        isCreateChannelError: false,
+    };
+
     state = {
         name: ''
     };

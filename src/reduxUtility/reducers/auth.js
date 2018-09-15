@@ -3,7 +3,7 @@ import { updateObject } from 'utility/utility';
 
 const INITIAL_STATE = {
     uid: '',
-    id: 0,
+    id: '',
     username: '',
     isLogged: false,
     channelId: []
